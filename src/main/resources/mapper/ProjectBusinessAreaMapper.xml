@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.ecnu.sei.group08.mapper.ProjectBusinessAreaMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="edu.ecnu.sei.group08.model.ProjectBusinessAreaDO">
+        <id column="project_id" property="projectId"/>
+        <result column="business_area_id" property="businessAreaId"/>
+        <result column="business_area_name" property="businessAreaName"/>
+    </resultMap>
+    
+    <select id="selectProjectBusinessAreaByProjectId" parameterType="java.lang.Long" resultType="edu.ecnu.sei.group08.model.ProjectBusinessAreaDO">
+        SELECT * FROM sys_project_business_area as u WHERE u.project_id = #{projectId}
+    </select>
+    
+    <delete id="deleteProjectBusinessAreaByProjectId" parameterType="java.lang.Long">
+    	DELETE FROM sys_project_business_area WHERE project_id = #{projectId}
+    </delete>
+
+</mapper>

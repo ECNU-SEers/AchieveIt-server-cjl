@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.ecnu.sei.group08.mapper.ArchivedInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="edu.ecnu.sei.group08.model.ArchivedInfoDO">
+        <id column="project_id" property="projectId"/>
+        <result column="basic_data" property="basicData"/>
+        <result column="proposal" property="proposal"/>
+        <result column="quotation" property="quotation"/>
+        <result column="estimation" property="estimation"/>
+        <result column="planning" property="planning"/>
+        <result column="process_clipping" property="processClipping"/>
+        <result column="cost_manage" property="costManage"/>
+        <result column="req_change" property="reqChange"/>
+        <result column="risk_manage" property="riskManage"/>
+        <result column="client_acc_pro" property="clientAccPro"/>
+        <result column="client_acc" property="clientAcc"/>
+        <result column="info_summary" property="infoSummary"/>
+        <result column="best_experience" property="bestExperience"/>
+        <result column="dev_tool" property="devTool"/>
+        <result column="dev_template" property="devTemplate"/>
+        <result column="checklist" property="checklist"/>
+        <result column="qa_summary" property="qaSummary"/>
+    </resultMap>
+
+</mapper>

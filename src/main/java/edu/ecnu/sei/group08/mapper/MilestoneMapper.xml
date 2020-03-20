@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.ecnu.sei.group08.mapper.MilestoneMapper">
+
+    <resultMap id="BaseResultMap" type="edu.ecnu.sei.group08.model.MilestoneDO">
+        <id column="id" property="id"/>
+        <result column="project_id" property="projectId"/>
+        <result column="progress" property="progress"/>
+        <result column="record_date" property="recordDate"/>
+        <result column="recorder_id" property="recorderId"/>
+    </resultMap>
+    
+    <select id="selectProjectMilestoneByProjectId" parameterType="java.lang.Long" resultType="edu.ecnu.sei.group08.model.MilestoneDO">
+        SELECT * FROM sys_milestone as u WHERE u.project_id = #{projectId}
+    </select>
+
+</mapper>

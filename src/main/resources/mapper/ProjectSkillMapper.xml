@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.ecnu.sei.group08.mapper.ProjectSkillMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="edu.ecnu.sei.group08.model.ProjectSkillDO">
+        <id column="project_id" property="projectId"/>
+        <result column="skill_id" property="skillId"/>
+        <result column="skill_name" property="skillName"/>
+    </resultMap>
+    
+    <select id="selectProjectSkillByProjectId" parameterType="java.lang.Long" resultType="edu.ecnu.sei.group08.model.ProjectSkillDO">
+        SELECT * FROM sys_project_skill as u WHERE u.project_id = #{projectId}
+    </select>
+    
+    <delete id="deleteProjectSkillByProjectId" parameterType="java.lang.Long">
+    	DELETE FROM sys_project_skill WHERE project_id = #{projectId}
+    </delete>
+
+</mapper>

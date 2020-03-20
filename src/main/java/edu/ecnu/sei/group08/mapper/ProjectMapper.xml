@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.ecnu.sei.group08.mapper.ProjectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="edu.ecnu.sei.group08.model.ProjectDO">
+        <id column="id" property="id"/>
+        <result column="outer_id" property="outerId"/>
+        <result column="name" property="name"/>
+        <result column="start_date" property="startDate"/>
+        <result column="end_date" property="endDate"/>
+        <result column="state" property="state"/>
+        <result column="client_id" property="clientId"/>
+        <result column="supervisor_id" property="supervisorId"/>
+        <result column="supervisor_name" property="supervisorName"/>
+        <result column="manager_id" property="managerID"/>
+        <result column="manager_name" property="managerName"/>
+        <result column="qa_assigned" property="qaAssigned"/>
+        <result column="epg_assigned" property="epgAssigned"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+    
+    <select id="selectCountByOuterId" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM sys_project as u WHERE u.outer_id = #{outerId}
+    </select>
+    
+    <select id="selectByNameLikeKeyword" resultType="edu.ecnu.sei.group08.model.ProjectDO">
+    	SELECT * FROM sys_project as u WHERE u.name LIKE "%"#{keyword}"%"
+    </select>
+    
+
+</mapper>
